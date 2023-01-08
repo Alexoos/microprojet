@@ -23,10 +23,16 @@ const sauvegarde = (cheminDepart,cheminDestination) =>{
   }
 
 const miniteurSauvegarde = (cheminDepart,cheminDestination) => {
-  setTimeout(() => {
-    sauvegarde(cheminDepart,cheminDestination)
+  setInterval(() => {
+    try {
+      sauvegarde(cheminDepart,cheminDestination);
+      console.log('Sauvegarde Réussite !');
+  } catch (err) {
+      console.error(err)
+  }
   },5000);
 }
+
 
 
 miniteurSauvegarde("Depart","Arrive");
